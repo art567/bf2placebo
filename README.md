@@ -3,8 +3,9 @@ BatteField 2 Placebo
 
 A BattleField 2 Placebo Installer.
 
-For example: it is needed in case of PR:BF2 installation .
-Possible other mods is supported, we don't care!
+For example: it is needed in case of PR:BF2 installation.
+
+Possible other mods is supported, but we don't care!
 
 Download
 ---------------------
