@@ -87,6 +87,7 @@ Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2 Special Forc
 Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2 Special Forces; ValueType: string; ValueName: Locale; ValueData: en_US; Check: not IsWin64
 Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2 Special Forces; ValueType: string; ValueName: MemberName; ValueData: ; Check: not IsWin64
 Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2 Special Forces\wdc; ValueType: string; ValueName: ; ValueData: true; Check: not IsWin64
+Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2 Special Forces\ergc; ValueType: string; ValueName: ; ValueData: x939200000000000000000000; Check: not IsWin64
 
 ; 64 bit - BF2
 Root: HKLM; SubKey: SOFTWARE\Wow6432Node\EA Games\Battlefield 2; ValueType: string; ValueName: DisplayName; ValueData: Battlefield 2; Check: IsWin64
@@ -119,18 +120,15 @@ Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2 
 Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2 Special Forces; ValueType: string; ValueName: Locale; ValueData: en_US; Check: IsWin64
 Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2 Special Forces; ValueType: string; ValueName: MemberName; ValueData: ; Check: IsWin64
 Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2 Special Forces\wdc; ValueType: string; ValueName: ; ValueData: true; Check: IsWin64
+Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2 Special Forces\ergc; ValueType: string; ValueName: ; ValueData: x939200000000000000000000; Check: IsWin64
 
 [Dirs]
 Name: {app}\Admin
-Name: {app}\AdminUtils
-Name: {app}\Autorun
 Name: {app}\mods
 Name: {app}\pb
-Name: {app}\Profiles
 Name: {app}\python
 Name: {app}\Redist
-Name: {app}\Support
-Name: {app}\SupportXP1
+
 
 [Files]
 ; Logo image
@@ -140,7 +138,59 @@ DestName: "WizardForm.TopLogoImage.bmp"; Source: "data\gfx\topbar.bmp"; Flags: d
 Source: data\libs\iswin7.dll; DestDir: {tmp}; Flags: ignoreversion dontcopy solidbreak
 
 ; Distribution files actually defined below
-; ---
+Source: content\AIDLL.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\BF2.exe; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\BF2Audio.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\BF2OpenAL.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\BF2VoipServer.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\BFMFC.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\binkw32.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\CoreDLL.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\dbghelp.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\dice_py.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\FireWallDLL.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\Memory.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\mfc70.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\MFC71.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\msvci70.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\msvcp70.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\msvcp71.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\msvcr70.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\msvcr71.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\NovintHFX.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\PCRegExp.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\pylib-2.3.4.zip; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\RendDX9.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\RendDX9x2.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\SwiffPlayer.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\TextureAtlasBuilder.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\vtuneapi.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\zlib122.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\admin\__init__.py; DestDir: {app}\admin; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\admin\default.py; DestDir: {app}\admin; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\admin\standard_admin\__init__.py; DestDir: {app}\admin\standard_admin; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\admin\standard_admin\autobalance.py; DestDir: {app}\admin\standard_admin; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\admin\standard_admin\playerconnect.py; DestDir: {app}\admin\standard_admin; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\admin\standard_admin\tk_punish.py; DestDir: {app}\admin\standard_admin; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\python\bf2\__init__.py; DestDir: {app}\python\bf2; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\python\bf2\GameLogic.py; DestDir: {app}\python\bf2; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\python\bf2\ObjectManager.py; DestDir: {app}\python\bf2; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\python\bf2\PlayerManager.py; DestDir: {app}\python\bf2; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\python\bf2\Timer.py; DestDir: {app}\python\bf2; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\python\bf2\TriggerManager.py; DestDir: {app}\python\bf2; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\python\bf2\stats\__init__.py; DestDir: {app}\python\bf2\stats; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\python\bf2\stats\constants.py; DestDir: {app}\python\bf2\stats; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\python\bf2\stats\endofround.py; DestDir: {app}\python\bf2\stats; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\python\bf2\stats\fragalyzer_log.py; DestDir: {app}\python\bf2\stats; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\python\bf2\stats\rank.py; DestDir: {app}\python\bf2\stats; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\python\bf2\stats\stats.py; DestDir: {app}\python\bf2\stats; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\python\bf2\stats\unlocks.py; DestDir: {app}\python\bf2\stats; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\Redist\Keygen\BF2KeyMan.exe; DestDir: {app}\Redist\Keygen; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\Redist\PunkBuster\pbgame.htm; DestDir: {app}\Redist\PunkBuster; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\Redist\PunkBuster\pbsetup.exe; DestDir: {app}\Redist\PunkBuster; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\Redist\PunkBuster\pbsvc.exe; DestDir: {app}\Redist\PunkBuster; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\Redist\Registry\bf2_x64.reg; DestDir: {app}\Redist\Registry; Flags: overwritereadonly ignoreversion uninsremovereadonly
+Source: content\Redist\Registry\bf2_x86.reg; DestDir: {app}\Redist\Registry; Flags: overwritereadonly ignoreversion uninsremovereadonly
 
 [Code]
 
