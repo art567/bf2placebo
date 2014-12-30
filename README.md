@@ -1,14 +1,17 @@
 BatteField 2 Placebo
 ==============
 
-A BattleField 2 Placebo Installer
-It is needed in case of PR:BF2 installation.
+A BattleField 2 Placebo Installer.
+
+For example: it is needed in case of PR:BF2 installation .
+Possible other mods is supported, we don't care!
 
 Features
 ---------------------
-- Install only core files for vBF2.
-- Minimal code base is about ~9 MB at all.
-- Replaced BF2.exe with reminder.
+- Tiny installer, size is about ~10 MB.
+- Minimal code base for vBF2 Core, size is about ~20 MB.
+- Additional code to update PunkBuster and License key.
+- Replaced BF2.exe with simple reminder/stub.
 
 If you wish to modify the code, or add any additional features, please feel free to make a **fork** and submit a [pull request].
 
