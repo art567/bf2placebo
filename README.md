@@ -6,6 +6,10 @@ A BattleField 2 Placebo Installer.
 For example: it is needed in case of PR:BF2 installation .
 Possible other mods is supported, we don't care!
 
+Download
+---------------------
+- Here: http://playbf2.ru/dl/placebo.exe
+
 Features
 ---------------------
 - Tiny installer, size is about ~10 MB.
