@@ -1,17 +1,17 @@
 [Setup]
 AppName=Battlefield 2 Placebo
-AppVerName=Battlefield 2 Placebo
+AppVerName=Battlefield 2 Placebo v1.50
 AppCopyright=Tema567
 AppID={{72427ED2-72A7-4DB3-99CE-D0E36B24307A}
 AppMutex={{72427ED2-72A7-4DB3-99CE-D0E36B24307B}
 AppPublisher=PLAYBF2.RU
 AppPublisherURL=http://www.playbf2.ru
-AppSupportURL=http://www.playbf2.ru/go/tiny
+AppSupportURL=http://www.playbf2.ru/go/placebo
 AppVersion=1.5
 VersionInfoVersion=1.5
 VersionInfoCopyright=Tema567
 VersionInfoCompany=PLAYBF2.RU
-VersionInfoDescription=BattleField 2 Placebo
+VersionInfoDescription=BattleField 2 Placebo v1.50
 VersionInfoTextVersion=v1.5
 DefaultDirName={code:GetInstallDir}
 SetupLogging=true
@@ -33,16 +33,28 @@ SetupIconFile=data\gfx\setup.ico
 AppendDefaultDirName=true
 ArchitecturesInstallIn64BitMode=x64
 ArchitecturesAllowed=x86 x64
-InternalCompressLevel=ultra
-Compression=lzma
+InternalCompressLevel=ultra64
+Compression=lzma/ultra64
 OutputDir=Release
 OutputBaseFilename=setup
 
 
 [Icons]
 ; English - Common
-Name: {group}\{cm:UninstallProgram, Battlefield 2 Placebo v1.5}; Filename: {uninstallexe}; Comment: Uninstall Battlefield 2 Placebo from your computer; Languages: English
-Name: {group}\{cm:UninstallProgram, Battlefield 2 Placebo v1.5}; Filename: {uninstallexe}; Comment: Удалить Battlefield 2 Placebo с вашего компьютера; Languages: Russian
+Name: {group}\{cm:UninstallProgram, Battlefield 2 Placebo v1.50}; Filename: {uninstallexe}; Comment: Uninstall Battlefield 2 Placebo from your computer; Languages: English
+
+; Russian - Common
+Name: {group}\{cm:UninstallProgram, Battlefield 2 Placebo v1.50}; Filename: {uninstallexe}; Comment: Удалить Battlefield 2 Placebo с вашего компьютера; Languages: Russian
+
+
+[Run]
+; English - Common
+Filename: {app}\Redist\Keygen\BF2KeyMan.exe; Parameters: /q /a; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: Enter license key; Languages: English
+Filename: {app}\Redist\PunkBuster\pbsetup.exe; Parameters: /u --i-accept-the-pb-eula; Flags: skipifdoesntexist postinstall runascurrentuser; Description: Update PunkBuster now; BeforeInstall: PreparePunkbuster; Languages: English
+
+; Russian - Common
+Filename: {app}\Redist\Keygen\BF2KeyMan.exe; Parameters: /q /a; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: Ввести лицензионный ключ; Languages: Russian
+Filename: {app}\Redist\PunkBuster\pbsetup.exe; Parameters: /u --i-accept-the-pb-eula; Flags: skipifdoesntexist postinstall runascurrentuser; Description: Обновить PunkBuster; BeforeInstall: PreparePunkbuster; Languages: Russian
 
 
 [UninstallDelete]
@@ -81,6 +93,7 @@ Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2; ValueType: 
 Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2; ValueType: string; ValueName: Locale; ValueData: en_US; Check: not IsWin64
 Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2; ValueType: string; ValueName: MemberName; ValueData: ; Check: not IsWin64
 Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2\wdc; ValueType: string; ValueName: ; ValueData: true; Check: not IsWin64
+Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2\ergc; ValueType: string; ValueName: ; ValueData: x939200000000000000000000; Check: not IsWin64
 Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2 Special Forces; ValueType: string; ValueName: InstallDir; ValueData: {app}; Check: not IsWin64
 Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2 Special Forces; ValueType: string; ValueName: Version; ValueData: 1.5; Check: not IsWin64
 Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2 Special Forces; ValueType: string; ValueName: Language; ValueData: English; Check: not IsWin64
@@ -114,6 +127,7 @@ Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2;
 Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2; ValueType: string; ValueName: Locale; ValueData: en_US; Check: IsWin64
 Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2; ValueType: string; ValueName: MemberName; ValueData: ; Check: IsWin64
 Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2\wdc; ValueType: string; ValueName: ; ValueData: true; Check: IsWin64
+Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2\ergc; ValueType: string; ValueName: ; ValueData: x939200000000000000000000; Check: IsWin64
 Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2 Special Forces; ValueType: string; ValueName: InstallDir; ValueData: {app}; Check: IsWin64
 Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2 Special Forces; ValueType: string; ValueName: Version; ValueData: 1.5; Check: IsWin64
 Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2 Special Forces; ValueType: string; ValueName: Language; ValueData: English; Check: IsWin64
@@ -132,7 +146,7 @@ Name: {app}\Redist
 
 [Files]
 ; Logo image
-DestName: "WizardForm.TopLogoImage.bmp"; Source: "data\gfx\topbar.bmp"; Flags: dontcopy solidbreak
+DestName: "WizardForm.TopLogoImage.bmp"; Source: "data\gfx\topbar.bmp"; Flags: ignoreversion dontcopy solidbreak
 
 ; Installer components
 Source: data\libs\iswin7.dll; DestDir: {tmp}; Flags: ignoreversion dontcopy solidbreak
@@ -211,7 +225,7 @@ procedure BannerClick(Sender: TObject);
 var
   ErrorCode:integer;
 begin
-  ShellExec('open','http://www.playbf2.ru/go/tiny','','',SW_SHOWNORMAL,ewNoWait,ErrorCode);
+  ShellExec('open','http://www.playbf2.ru/go/placebo','','',SW_SHOWNORMAL,ewNoWait,ErrorCode);
 end;
 
 
